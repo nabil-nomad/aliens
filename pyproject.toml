@@ -5,14 +5,15 @@ version = "0.1.0"
 description = "Alien Invasion Game in Python"
 authors = [{ name = "Nabil Khalil", email = "nabilamirkhalil@gmail.com" }]
 readme = "README.md"
-packages = [{ include = "aliens", from = "src" }]
 dependencies = [
-    "pygame (>=2.6)"
+    "pygame>=2.6.1",
 ]
 
-[tool.poetry.group.test.dependencies]
-ruff = ">=0.9"
+[dependency-groups]
+test = [
+    "ruff>=0.16.10",
+]
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["uv_build>=0.12.23,<0.13"]
+build-backend = "uv_build"
